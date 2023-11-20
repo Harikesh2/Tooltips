@@ -7,11 +7,14 @@ render(){
     return(
         <>
         <div>
-        <div className="toolbtn" >
-            <div className="btn-info"> Hover Over Me!!</div>
+            {/* BUTTON */}
+        <div className="tool-button" onMouseOver={handleShowTooltip} onMouseOut={handleShowTooltip}>
+           { <div className="btn-info"> Hover Over Me!!</div>}
         </div>
-
-        {showToolTip?<div className="Tooltip">I'm The Tooltip!!</div>:null}
+        {/* CODE FOR THE TOOLTIP */}
+        {
+        showToolTip?<div className={`box-${position} arrow-${position}`} style={{color: "blue", display: "flex", alignItems: "center"}}><strong>I'm the Tooltip!!</strong></div>:null
+        }
         </div>
         </>
     );
